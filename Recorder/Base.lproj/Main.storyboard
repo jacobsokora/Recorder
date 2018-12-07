@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ru1-9y-MUx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Recording View Controller-->
+        <scene sceneID="fLY-8z-Var">
+            <objects>
+                <viewController id="Ru1-9y-MUx" customClass="RecordingViewController" customModule="Recorder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5PM-82-dgl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="127" translatesAutoresizingMaskIntoConstraints="NO" id="2TX-xc-AgJ">
+                                <rect key="frame" x="14" y="306.5" width="347" height="31"/>
+                                <connections>
+                                    <action selector="changeAudioQuality:" destination="Ru1-9y-MUx" eventType="valueChanged" id="Cgb-I7-u7r"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audio Quality: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHv-VR-GRd">
+                                <rect key="frame" x="127" y="277.5" width="121.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQr-SU-MsE">
+                                <rect key="frame" x="0.0" y="579" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem enabled="NO" image="record" id="icl-uJ-HUy">
+                                        <connections>
+                                            <action selector="record:" destination="Ru1-9y-MUx" id="184-pn-xbT"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem enabled="NO" image="play" id="ECb-EF-EB8">
+                                        <connections>
+                                            <action selector="play:" destination="Ru1-9y-MUx" id="281-os-ChQ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vin-oz-yfb" firstAttribute="trailing" secondItem="qQr-SU-MsE" secondAttribute="trailing" id="3Gx-Fs-FK5"/>
+                            <constraint firstItem="qQr-SU-MsE" firstAttribute="leading" secondItem="vin-oz-yfb" secondAttribute="leading" id="6nF-vQ-2Ra"/>
+                            <constraint firstItem="2TX-xc-AgJ" firstAttribute="top" secondItem="yHv-VR-GRd" secondAttribute="bottom" constant="8" id="bWz-rO-bIq"/>
+                            <constraint firstItem="2TX-xc-AgJ" firstAttribute="centerY" secondItem="vin-oz-yfb" secondAttribute="centerY" id="eMz-Of-DGs"/>
+                            <constraint firstItem="2TX-xc-AgJ" firstAttribute="leading" secondItem="vin-oz-yfb" secondAttribute="leading" constant="16" id="fXK-ii-8Rk"/>
+                            <constraint firstItem="vin-oz-yfb" firstAttribute="trailing" secondItem="2TX-xc-AgJ" secondAttribute="trailing" constant="16" id="g7V-mx-jC0"/>
+                            <constraint firstItem="vin-oz-yfb" firstAttribute="bottom" secondItem="qQr-SU-MsE" secondAttribute="bottom" id="kzz-1O-Ijz"/>
+                            <constraint firstItem="yHv-VR-GRd" firstAttribute="centerX" secondItem="2TX-xc-AgJ" secondAttribute="centerX" id="x6P-7f-96Z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vin-oz-yfb"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="audioQualityLabel" destination="yHv-VR-GRd" id="wdO-u1-g7h"/>
+                        <outlet property="playButton" destination="ECb-EF-EB8" id="wE7-WX-nON"/>
+                        <outlet property="recordButton" destination="icl-uJ-HUy" id="3le-4H-v7h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lb7-9J-M1r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="238" y="-438"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="play" width="23" height="24"/>
+        <image name="record" width="24" height="24"/>
+    </resources>
+</document>
